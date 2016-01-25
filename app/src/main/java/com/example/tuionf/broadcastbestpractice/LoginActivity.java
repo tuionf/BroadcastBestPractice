@@ -35,12 +35,9 @@ public class LoginActivity extends Activity {
         boolean isRemember = sharedPreferences.getBoolean("remember_password",false);
 
         if (isRemember){
-            Log.e("Login",isRemember+"");
             //将账号和密码都设置到文本框中
             String account = sharedPreferences.getString("account","");
             String password = sharedPreferences.getString("password","");
-            Log.e("Login","account   "+account);
-            Log.e("Login","password  "+password);
 
             accountEdit.setText(account);
             passwordEdit.setText(password);
@@ -68,9 +65,6 @@ public class LoginActivity extends Activity {
                     }
 
                     editor.commit();
-
-                    Log.e("Login","account——"+account +"——password——"+password );
-                    Log.e("Login", sharedPreferences.getBoolean("remember_password",false)+"");
 
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
